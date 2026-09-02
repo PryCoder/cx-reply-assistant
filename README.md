@@ -2,7 +2,7 @@
 
 An AI-powered customer support assistant that generates brand-grounded replies using OpenRouter LLMs. Built for Datastraw Technologies assessment.
 
-## 🚀 Live Demo
+## Live Demo
 
 [https://cx-reply-assistant.vercel.app](https://cx-reply-assistant.vercel.app)
 
@@ -10,18 +10,18 @@ An AI-powered customer support assistant that generates brand-grounded replies u
 - Email: `agent@example.com`
 - Password: `any password`
 
-## ✨ Features
+## Features
 
 - **Agent Login** - Secure authentication with Supabase Auth
 - **Conversation View** - Customer info, order details, message history
 - **AI Reply Generation** - Context-aware responses grounded in brand policies
-- **Edit & Regenerate** - Review and improve AI-generated responses
+- **Edit and Regenerate** - Review and improve AI-generated responses
 - **Approve Workflow** - Agent approval before sending
 - **AI Guardrails** - Prevents hallucinations and policy violations
 - **Full Logging** - Complete audit trail of all AI interactions
 - **Modern UI** - Clerk-style design with full responsiveness
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -32,7 +32,7 @@ An AI-powered customer support assistant that generates brand-grounded replies u
 | **AI** | OpenRouter API (GPT-4o-mini) |
 | **Deployment** | Vercel + Supabase |
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
@@ -69,7 +69,7 @@ supabase start
 supabase migration up
 ```
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the root directory:
 
@@ -93,7 +93,7 @@ VITE_SUPABASE_URL=your-supabase-url
 VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 **7 Tables with RLS Policies:**
 
@@ -114,16 +114,16 @@ CREATE POLICY "agents_see_their_brand_data" ON customers
   FOR SELECT USING (brand_id = auth.jwt() ->> 'brand_id'::text);
 ```
 
-## 🧪 Test Scenarios
+## Test Scenarios
 
 | Customer | Scenario | Policy | Guardrail |
 |----------|----------|--------|-----------|
-| Alex Rodriguez | Broken bottle | Refund | ✅ Covered |
-| Jordan Smith | 45-day refund | Refund | ✅ Guardrail |
-| Morgan Lee | Shipping status | Shipping | ✅ Covered |
-| Taylor Chen | Cancellation | Cancellation | ✅ Covered |
+| Alex Rodriguez | Broken bottle | Refund | Covered |
+| Jordan Smith | 45-day refund | Refund | Guardrail |
+| Morgan Lee | Shipping status | Shipping | Covered |
+| Taylor Chen | Cancellation | Cancellation | Covered |
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -140,7 +140,7 @@ supabase functions deploy generate-reply
 supabase secrets set OPENROUTER_API_KEY=your-key
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 cx-reply-assistant/
@@ -148,7 +148,7 @@ cx-reply-assistant/
 │   ├── src/
 │   │   ├── components/     # Reusable UI components
 │   │   ├── hooks/          # Custom React hooks
-│   │   ├── lib/            # Utilities & configuration
+│   │   ├── lib/            # Utilities and configuration
 │   │   ├── pages/          # Page components
 │   │   ├── services/       # API services
 │   │   ├── types/          # TypeScript definitions
@@ -173,11 +173,11 @@ cx-reply-assistant/
 └── README.md
 ```
 
-## 📝 License
+## License
 
 MIT
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built for Datastraw Technologies assessment
-- Powered by [Supabase](https://supabase.com) and [OpenRouter](https://openrouter.ai)
+- Powered by Supabase and OpenRouter
