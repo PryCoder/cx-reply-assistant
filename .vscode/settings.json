@@ -1,0 +1,10 @@
+{
+  "deno.enable": true,
+  "deno.config": "./supabase/deno.json",
+  "[typescript]": {
+    "deno.enable": true
+  },
+  "[typescriptreact]": {
+    "deno.enable": true
+  }
+}
